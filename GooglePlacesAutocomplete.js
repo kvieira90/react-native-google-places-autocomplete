@@ -71,6 +71,7 @@ const GooglePlacesAutocomplete = React.createClass({
     timeout: React.PropTypes.number,
     onTimeout: React.PropTypes.func,
     query: React.PropTypes.object,
+    placeholderTextColor: React.PropTypes.string,
     GoogleReverseGeocodingQuery: React.PropTypes.object,
     GooglePlacesSearchQuery: React.PropTypes.object,
     styles: React.PropTypes.object,
