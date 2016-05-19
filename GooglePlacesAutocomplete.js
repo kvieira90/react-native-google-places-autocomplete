@@ -495,7 +495,6 @@ const GooglePlacesAutocomplete = React.createClass({
           this._onPress(rowData)
         }
         underlayColor="#c8c7cc"
-        style={defaultStyles.customAddress}
       >
         <View>
           <View style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
@@ -526,7 +525,7 @@ const GooglePlacesAutocomplete = React.createClass({
     if ((this.state.text !== '' || this.props.predefinedPlaces.length || this.props.currentLocation === true) && this.state.listViewDisplayed === true) {
       return (
         <View>
-          <TouchableHighlight onPress={this.hideList} underlayColor="#c8c7cc">
+          <TouchableHighlight onPress={this.hideList} underlayColor="#c8c7cc" style={defaultStyles.customAddress}>
             <View>
               <View style={[defaultStyles.row, this.props.styles.row]}>
                 <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description]}
