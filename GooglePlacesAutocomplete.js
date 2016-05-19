@@ -532,8 +532,8 @@ const GooglePlacesAutocomplete = React.createClass({
 
             {...this.props}
           />
-          <TouchableHighlight onPress={this.hideList} style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
-            <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
+          <TouchableHighlight onPress={this.hideList} style={[defaultStyles.row, this.props.styles.row]}>
+            <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description]}
             numberOfLines={1}>Add Custom Address</Text>
           </TouchableHighlight>
         </View>
