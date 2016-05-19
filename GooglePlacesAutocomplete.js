@@ -495,7 +495,7 @@ const GooglePlacesAutocomplete = React.createClass({
           this._onPress(rowData)
         }
         underlayColor="#c8c7cc"
-        style={{defaultStyles.customAddress}}
+        style={defaultStyles.customAddress}
       >
         <View>
           <View style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
