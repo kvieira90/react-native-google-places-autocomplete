@@ -557,7 +557,7 @@ const GooglePlacesAutocomplete = React.createClass({
     return null;
   },
   hideList(){
-    this.setState({listViewDisplayed: true});
+    this.setState({listViewDisplayed: false});
   },
   render() {
     let { onChangeText, onFocus, ...userProps } = this.props.textInputProps;
