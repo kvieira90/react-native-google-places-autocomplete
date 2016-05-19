@@ -58,7 +58,7 @@ const defaultStyles = {
     marginRight: -15,
   },
   customAddress:{
-    backgroundColor: 'white',
+    backgroundColor: '#820000',
   }
 };
 
@@ -528,9 +528,10 @@ const GooglePlacesAutocomplete = React.createClass({
           <TouchableHighlight onPress={this.hideList} underlayColor="#c8c7cc" style={defaultStyles.customAddress}>
             <View>
               <View style={[defaultStyles.row, this.props.styles.row]}>
-                <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description]}
+                <Text style={[{flex: 1,color: 'white'}, defaultStyles.description, this.props.styles.description]}
                 numberOfLines={1}>Add Custom Address</Text>
               </View>
+              <View style={[defaultStyles.separator, this.props.styles.separator]} />
             </View>
           </TouchableHighlight>
           <ListView
