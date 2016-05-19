@@ -550,6 +550,9 @@ const GooglePlacesAutocomplete = React.createClass({
 
     return null;
   },
+  hideList(){
+    this.setState({listViewDisplayed: true});
+  },
   render() {
     let { onChangeText, onFocus, ...userProps } = this.props.textInputProps;
     return (
@@ -573,6 +576,10 @@ const GooglePlacesAutocomplete = React.createClass({
           />
         </View>
         {this._getListView()}
+        <TouchableHighlight onPress={this.hideList} style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
+          <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
+          numberOfLines={1}>Add Custom Address</Text>
+        </TouchableHighlight>
       </View>
     );
   },
