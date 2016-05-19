@@ -529,7 +529,7 @@ const GooglePlacesAutocomplete = React.createClass({
             <View>
               <View style={[defaultStyles.row, this.props.styles.row]}>
                 <Text style={{flex: 1,color: 'white'}}
-                numberOfLines={1}>Add Custom Address</Text>
+                numberOfLines={1}>Use Custom Address</Text>
               </View>
               <View style={[defaultStyles.separator, this.props.styles.separator]} />
             </View>
