@@ -521,16 +521,22 @@ const GooglePlacesAutocomplete = React.createClass({
   _getListView() {
     if ((this.state.text !== '' || this.props.predefinedPlaces.length || this.props.currentLocation === true) && this.state.listViewDisplayed === true) {
       return (
-        <ListView
-          keyboardShouldPersistTaps={true}
-          keyboardDismissMode="on-drag"
-          style={[defaultStyles.listView, this.props.styles.listView]}
-          dataSource={this.state.dataSource}
-          renderRow={this._renderRow}
-          automaticallyAdjustContentInsets={false}
+        <View>
+          <ListView
+            keyboardShouldPersistTaps={true}
+            keyboardDismissMode="on-drag"
+            style={[defaultStyles.listView, this.props.styles.listView]}
+            dataSource={this.state.dataSource}
+            renderRow={this._renderRow}
+            automaticallyAdjustContentInsets={false}
 
-          {...this.props}
-        />
+            {...this.props}
+          />
+          <TouchableHighlight onPress={this.hideList} style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
+            <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
+            numberOfLines={1}>Add Custom Address</Text>
+          </TouchableHighlight>
+        </View>
       );
     }
 
@@ -576,10 +582,6 @@ const GooglePlacesAutocomplete = React.createClass({
           />
         </View>
         {this._getListView()}
-        <TouchableHighlight onPress={this.hideList} style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
-          <Text style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
-          numberOfLines={1}>Add Custom Address</Text>
-        </TouchableHighlight>
       </View>
     );
   },
