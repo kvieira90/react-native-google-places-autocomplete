@@ -115,8 +115,7 @@ const GooglePlacesAutocomplete = React.createClass({
       currentLocationLabel: 'Current location',
       nearbyPlacesAPI: 'GooglePlacesSearch',
       filterReverseGeocodingByTypes: [],
-      predefinedPlacesAlwaysVisible: false,
-      customAddress: false
+      predefinedPlacesAlwaysVisible: false
     };
   },
 
@@ -255,11 +254,10 @@ const GooglePlacesAutocomplete = React.createClass({
 
               this.setState({
                 text: rowData.description,
-                customAddress: false
               });
 
               delete rowData.isLoading;
-              this.props.onPress(rowData, details, this.state.customAddress);
+              this.props.onPress(rowData, details);
             }
           } else {
             this._disableRowLoaders();
@@ -563,7 +561,7 @@ const GooglePlacesAutocomplete = React.createClass({
     return null;
   },
   hideList(){
-    this.setState({listViewDisplayed: false, customAddress: true});
+    this.setState({listViewDisplayed: false});
   },
   render() {
     let { onChangeText, onFocus, ...userProps } = this.props.textInputProps;
