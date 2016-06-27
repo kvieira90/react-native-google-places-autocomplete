@@ -9,10 +9,6 @@ const defaultStyles = {
   textInputContainer: {
     backgroundColor: '#C9C9CE',
     height: 44,
-    borderTopColor: '#7e7e7e',
-    borderBottomColor: '#b5b5b5',
-    borderTopWidth: 1 / PixelRatio.get(),
-    borderBottomWidth: 1 / PixelRatio.get(),
   },
   textInput: {
     backgroundColor: '#FFFFFF',
