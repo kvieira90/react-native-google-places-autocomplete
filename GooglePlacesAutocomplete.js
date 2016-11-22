@@ -462,7 +462,7 @@ const GooglePlacesAutocomplete = React.createClass({
       );
     }
     return (
-      <ActivityIndicatorIOS
+      <ActivityIndicator
         animating={true}
         size="small"
       />
