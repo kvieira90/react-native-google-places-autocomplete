@@ -486,25 +486,27 @@ const GooglePlacesAutocomplete = React.createClass({
     rowData.description = rowData.description || rowData.formatted_address || rowData.name;
 
     return (
-      <TouchableHighlight
-        onPress={() =>
-          this._onPress(rowData)
-        }
-        underlayColor="#c8c7cc"
-      >
-        <View>
-          <View style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
-            <Text
-              style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
-              numberOfLines={1}
-            >
-              {rowData.description}
-            </Text>
-            {this._renderLoader(rowData)}
+      <ScrollView horizontal={true}>
+        <TouchableHighlight
+          onPress={() =>
+            this._onPress(rowData)
+          }
+          underlayColor="#c8c7cc"
+        >
+          <View>
+            <View style={[defaultStyles.row, this.props.styles.row, rowData.isPredefinedPlace ? this.props.styles.specialItemRow : {}]}>
+              <Text
+                style={[{flex: 1}, defaultStyles.description, this.props.styles.description, rowData.isPredefinedPlace ? this.props.styles.predefinedPlacesDescription : {}]}
+                numberOfLines={1}
+              >
+                {rowData.description}
+              </Text>
+              {this._renderLoader(rowData)}
+            </View>
+            <View style={[defaultStyles.separator, this.props.styles.separator]} />
           </View>
-          <View style={[defaultStyles.separator, this.props.styles.separator]} />
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </ScrollView>
     );
   },
 
@@ -521,7 +523,7 @@ const GooglePlacesAutocomplete = React.createClass({
     if ((this.state.text !== '' || this.props.predefinedPlaces.length || this.props.currentLocation === true) && this.state.listViewDisplayed === true) {
       return (
         <View>
-          <TouchableHighlight onPress={this.hideList} underlayColor="#c8c7cc" style={defaultStyles.customAddress}>
+          <TouchableHighlight onPress={this.hideList.bind(this)} underlayColor="#c8c7cc" style={defaultStyles.customAddress}>
             <View>
               <View style={[defaultStyles.row, this.props.styles.row]}>
                 <Text style={{flex: 1,color: 'white'}}
